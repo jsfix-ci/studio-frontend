@@ -48,7 +48,7 @@ export function requestDeleteAsset(courseId, assetId) {
     method: 'delete',
     headers: {
       'Accept': 'application/json',
-      'X-CSRFToken': Cookies.get('csrftoken'),
+      'X-CSRFToken': JSON.parse(Cookies.get('csrftoken')),
     },
   });
 }
@@ -60,7 +60,7 @@ export function requestToggleLockAsset(courseId, asset) {
     body: JSON.stringify({ locked: !asset.locked }),
     headers: {
       'Accept': 'application/json',
-      'X-CSRFToken': Cookies.get('csrftoken'),
+      'X-CSRFToken': JSON.parse(Cookies.get('csrftoken')),
     },
   });
 }
@@ -74,7 +74,7 @@ export function postUploadAsset(courseId, file) {
     body: data,
     headers: {
       'Accept': 'application/json',
-      'X-CSRFToken': Cookies.get('csrftoken'),
+      'X-CSRFToken': JSON.parse(Cookies.get('csrftoken')),
     },
   });
 }
@@ -95,7 +95,7 @@ export function postAccessibilityForm(formEmail, formFullName, formMessage) {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'X-CSRFToken': Cookies.get('csrftoken'),
+      'X-CSRFToken': JSON.parse(Cookies.get('csrftoken')),
     },
   });
 }
